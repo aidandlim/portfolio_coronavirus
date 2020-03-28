@@ -1,0 +1,9 @@
+.core {
+    width: 100%;
+    height: calc(100% - 3rem);
+
+    position: relative;
+    float: left;
+
+    background-color: #34495e;
+}

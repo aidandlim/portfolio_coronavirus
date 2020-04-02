@@ -1,11 +1,11 @@
 .worldList {
-    width: 90%;
-    max-width: 40rem;
+    width: calc(100% - 3rem);
     height: auto;
 
+    margin: 2rem 1.5rem;
+
     position: relative;
-    left: 50%;
-    transform: translate(-50%, 0);
+    float: left;
 
     border-collapse: collapse;
 }
@@ -31,7 +31,7 @@
 
 .worldList > tbody > tr > td {
     padding: 0.2rem;
-    
+
     color: #aaaaaa;
     font-size: 0.6rem;
     font-weight: 500;
@@ -65,4 +65,8 @@
 .worldList-percent {
     font-size: 0.5rem;
     font-weight: 300;
+}
+
+.worldList-loading {
+    height: 5rem;
 }

@@ -7,3 +7,30 @@
     background-color: #202020;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+
+.header-ci {
+    width: 1.2rem;
+    height: 1.2rem;
+
+    margin: 0.65rem;
+
+    position: relative;
+    float: left;
+
+    background-size: 1.2rem 1.2rem;
+    filter: grayscale(1);
+}
+
+.header-title {
+    width: auto;
+    height: auto;
+
+    position: relative;
+    float: left;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    color: #808080;
+    font-size: 0.9rem;
+    font-weight: 700;
+}

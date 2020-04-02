@@ -97,15 +97,3 @@ body {
     -khtml-user-select: none;
     user-select: none;
 }
-
-::-webkit-scrollbar {
-    -webkit-appearance: none;
-}
-
-::-webkit-scrollbar:vertical {
-    width: 0px;
-}
-
-::-webkit-scrollbar:horizontal {
-    height: 0px;
-}

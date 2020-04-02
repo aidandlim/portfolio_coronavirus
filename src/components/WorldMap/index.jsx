@@ -2,8 +2,8 @@ import React from 'react';
 
 import './index.css';
 
-const NowMap = ({ data }) => {
+const WorldMap = ({ data }) => {
     return <div></div>;
 };
 
-export default NowMap;
+export default WorldMap;

@@ -19,3 +19,13 @@ export const timeCalculator = target => {
 
     return time;
 };
+
+export const getUniqueObjectArray = (array) => {
+    return array.filter((item, i) => {
+        return (
+            array.findIndex((item2, j) => {
+                return item.day === item2.day;
+            }) === i
+        );
+    });
+};

@@ -11,7 +11,7 @@
 }
 
 .world-container {
-    width: 95%;
+    width: 90%;
     max-width: 40rem;
     height: auto;
 
@@ -25,7 +25,7 @@
     height: auto;
 
     margin: 3rem 0;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
 
     position: relative;
     float: left;
@@ -35,14 +35,13 @@
     color: #808080;
     font-size: 1.25rem;
     font-weight: 700;
-    
-    background-color: #353535;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+    background-color: #404040;
     border-radius: 0.5rem;
 }
 
 .world-greeting {
-    width: 80%;
+    width: 90%;
     height: auto;
 
     margin-bottom: 3rem;
@@ -62,7 +61,7 @@
 .world-symbol {
     margin-right: 0.5rem;
 
-    color: #FFEA00;
+    color: #ffea00;
 }
 
 .world-subtitle {
@@ -72,7 +71,7 @@
     position: relative;
     float: left;
 
-    color: #AAAAAA;
+    color: #aaaaaa;
     font-size: 1rem;
     font-weight: 500;
 }
@@ -90,4 +89,25 @@
     font-size: 0.75rem;
     font-weight: 300;
     line-height: 2;
+}
+
+.world-loading {
+    width: calc(100% - 3rem);
+    height: 18rem;
+
+    margin: 2rem 1.5rem;
+
+    position: relative;
+    float: left;
+
+    color: #aaaaaa;
+    font-size: 0.6rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 18rem;
+
+    background-color: #353535;
+    border-radius: 0.5rem;
+
+    opacity: 0.7;
 }

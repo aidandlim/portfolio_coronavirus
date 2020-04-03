@@ -61,6 +61,20 @@
     font-weight: 700;
 }
 
+.worldList-active {
+    font-weight: 700;
+}
+
+.worldList-new {
+    color: #FBC02D;
+    font-weight: 700;
+}
+
+.worldList-critical {
+    color: #F57C00;
+    font-weight: 700;
+}
+
 .worldList-recovered {
     color: #1abc9c;
     font-weight: 700;

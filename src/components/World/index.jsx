@@ -21,7 +21,7 @@ const World = () => {
     return (
         <div className='world'>
             <div className='world-container'>
-                <span className='world-title'>Current status of COVID-19 infections worldwide</span>
+                <span className='world-title'>Current status of COVID-19 worldwide</span>
                 <div className='world-greeting'>
                     Random sentences can also spur creativity in other types of projects being done. If you are trying to come up with a new concept, a new idea or a new product, a random sentence may
                     help you find unique qualities you may not have considered. Trying to incorporate the sentence into your project can help you look at it in different and unexpected ways than you
@@ -35,7 +35,7 @@ const World = () => {
                     generator comes into play. By inputting the desired number, you can make a list of as many random sentences as you want or need. Producing random sentences can be helpful in a
                     number of different ways.
                 </div>
-                {allData !== null ? <WorldSummary allData={allData} /> : null}
+                {allData !== null ? <WorldSummary allData={allData} /> : <div className='world-loading'>Loading...</div>}
                 <div className='world-subtitle'>
                     <font className='world-symbol'>✓</font> List by Countries
                 </div>

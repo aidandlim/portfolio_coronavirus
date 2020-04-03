@@ -3,9 +3,12 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@nivo/line": "^0.61.1",
         "@nivo/pie": "^0.61.1",
         "axios": "^0.19.2",
+        "feather-icons-react": "^0.4.1",
         "react": "^16.13.1",
+        "react-device-detect": "^1.11.14",
         "react-div-100vh": "^0.3.8",
         "react-dom": "^16.13.1",
         "react-router-dom": "^5.1.2",

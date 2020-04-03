@@ -27,8 +27,11 @@ const WorldList = ({ data }) => {
             <thead>
                 <tr>
                     <td colSpan={8}>
-                        T : Total&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;N : New&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;A : Active&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;C :
-                        Critical&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;R : Recovered
+                        <font className='worldList-active'>T : TOTAL</font>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        <font className='worldList-new'>N : NEW</font>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        <font className='worldList-active'>A : ACTIVE</font>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        <font className='worldList-critical'>C : CRITICAL</font>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        <font className='worldList-recovered'>R : RECOVERED</font>
                     </td>
                 </tr>
                 <tr>
@@ -63,16 +66,22 @@ const WorldList = ({ data }) => {
                                     <td rowSpan={2}>
                                         <font className='worldList-cases'>{numberFormat(data.cases.total)}</font>
                                     </td>
-                                    <td>{numberFormat(data.cases.new)}</td>
+                                    <td>
+                                        <font className='worldList-new'>{numberFormat(data.cases.new)}</font>
+                                    </td>
                                     <td>{numberFormat(data.cases.active)}</td>
-                                    <td>{numberFormat(data.cases.critical)}</td>
+                                    <td>
+                                        <font className='worldList-critical'>{numberFormat(data.cases.critical)}</font>
+                                    </td>
                                     <td>
                                         <font className='worldList-recovered'>{numberFormat(data.cases.recovered)}</font>
                                     </td>
                                     <td>
                                         <font className='worldList-deaths'>{numberFormat(data.deaths.total)}</font>
                                     </td>
-                                    <td>{numberFormat(data.deaths.new)}</td>
+                                    <td>
+                                        <font className='worldList-new'>{numberFormat(data.deaths.new)}</font>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>

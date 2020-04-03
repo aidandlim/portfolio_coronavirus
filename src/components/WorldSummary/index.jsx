@@ -10,10 +10,12 @@ const WorldSummary = ({ allData }) => {
     const recoveredData = [
         {
             id: 'recovered',
+            label: 'recovered',
             value: allData.cases.recovered
         },
         {
             id: 'cases',
+            label: 'cases',
             value: allData.cases.total - allData.cases.recovered
         }
     ];
@@ -21,10 +23,12 @@ const WorldSummary = ({ allData }) => {
     const criticalData = [
         {
             id: 'critical',
+            label: 'critical',
             value: allData.cases.critical
         },
         {
             id: 'cases',
+            label: 'cases',
             value: allData.cases.total - allData.cases.critical
         }
     ];
@@ -32,10 +36,12 @@ const WorldSummary = ({ allData }) => {
     const deathData = [
         {
             id: 'deaths',
+            label: 'deaths',
             value: allData.deaths.total
         },
         {
             id: 'cases',
+            label: 'cases',
             value: allData.cases.total - allData.deaths.total
         }
     ];
@@ -91,8 +97,6 @@ const PieChart = ({ data, color }) => {
             margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
             innerRadius={0.5}
             colors={[color, '#606060']}
-            borderWidth={5}
-            borderColor='#303030'
             enableSlicesLabels={false}
             enableRadialLabels={false}
             isInteractive={false}

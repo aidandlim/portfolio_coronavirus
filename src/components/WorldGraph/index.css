@@ -1,9 +1,0 @@
-.worldGraph {
-    width: calc(100% - 3rem);
-    height: auto;
-
-    margin: 2rem 1.5rem;
-
-    position: relative;
-    float: left;
-}

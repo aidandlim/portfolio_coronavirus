@@ -32,7 +32,7 @@ export const percentFormat = (number1, number2) => {
     if (number1 === null || number1 === 0 || number2 === null || number2 === 0) {
         return '-';
     } else {
-        return '( ' + ((number1 / number2) * 100).toFixed(3) + '% )';
+        return '( ' + ((number1 / number2) * 100).toFixed(2) + '% )';
     }
 };
 

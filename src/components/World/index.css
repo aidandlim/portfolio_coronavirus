@@ -11,7 +11,7 @@
 }
 
 .world-container {
-    width: 90%;
+    width: 95%;
     max-width: 40rem;
     height: auto;
 
@@ -24,7 +24,7 @@
     width: auto;
     height: auto;
 
-    margin: 5rem 0;
+    margin: 3rem 0;
     padding: 0.5rem 1rem;
 
     position: relative;
@@ -35,14 +35,34 @@
     color: #808080;
     font-size: 1.25rem;
     font-weight: 700;
+    
     background-color: #353535;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     border-radius: 0.5rem;
+}
+
+.world-greeting {
+    width: 80%;
+    height: auto;
+
+    margin-bottom: 3rem;
+
+    position: relative;
+    float: left;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    color: #606060;
+    font-size: 0.7rem;
+    font-weight: 100;
+    text-align: center;
+    line-height: 2;
 }
 
 .world-symbol {
     margin-right: 0.5rem;
 
-    color: #00BFA5;
+    color: #FFEA00;
 }
 
 .world-subtitle {

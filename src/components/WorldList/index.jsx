@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { timeCalculator, numberFormat, percentFormat } from '../../util';
+import { numberFormat, percentFormat } from '../../util';
 
 import './index.css';
 
@@ -26,23 +26,26 @@ const WorldList = ({ data }) => {
         <table className='worldList'>
             <thead>
                 <tr>
-                    <th rowSpan={2} width='17.5%'>
+                    <td colSpan={8}>
+                        T : Total&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;N : New&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;A : Active&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;C :
+                        Critical&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;R : Recovered
+                    </td>
+                </tr>
+                <tr>
+                    <th rowSpan={2} width='23%'>
                         COUNTRY
                     </th>
                     <th colSpan={5}>CASES</th>
                     <th colSpan={2}>DEATHS</th>
-                    <th rowSpan={2} width='12.5%'>
-                        UPDATE
-                    </th>
                 </tr>
                 <tr>
-                    <th width='10%'>TOTAL</th>
-                    <th width='10%'>NEW</th>
-                    <th width='10%'>ACTIVE</th>
-                    <th width='10%'>CRITICAL</th>
-                    <th width='10%'>RECOVERED</th>
-                    <th width='10%'>TOTAL</th>
-                    <th width='10%'>NEW</th>
+                    <th width='11%'>T</th>
+                    <th width='11%'>N</th>
+                    <th width='11%'>A</th>
+                    <th width='11%'>C</th>
+                    <th width='11%'>R</th>
+                    <th width='11%'>T</th>
+                    <th width='11%'>N</th>
                 </tr>
             </thead>
             <tbody>
@@ -70,7 +73,6 @@ const WorldList = ({ data }) => {
                                         <font className='worldList-deaths'>{numberFormat(data.deaths.total)}</font>
                                     </td>
                                     <td>{numberFormat(data.deaths.new)}</td>
-                                    <td rowSpan={2}>{timeCalculator(data.time)}</td>
                                 </tr>
                                 <tr>
                                     <td>

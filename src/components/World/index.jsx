@@ -12,9 +12,9 @@ const World = () => {
     const [allData, setAllData] = useState(null);
 
     useEffect(() => {
-        getWorldData(res => {
+        getWorldData((res) => {
             setData(res);
-            setAllData(res.find(data => data.country === 'All'));
+            setAllData(res.find((data) => data.country === 'All'));
         });
     }, []);
 

@@ -1,4 +1,4 @@
-export const timeCalculator = target => {
+export const timeCalculator = (target) => {
     const now = new Date();
     const then = new Date(target);
 
@@ -20,7 +20,7 @@ export const timeCalculator = target => {
     return time;
 };
 
-export const numberFormat = number => {
+export const numberFormat = (number) => {
     if (number === null || number === 0) {
         return '-';
     } else {
@@ -36,11 +36,14 @@ export const percentFormat = (number1, number2) => {
     }
 };
 
-export const commaNumber = number => {
-    return number.toString().replace('+', '').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+export const commaNumber = (number) => {
+    return number
+        .toString()
+        .replace('+', '')
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
 
-export const getUniqueObjectArray = array => {
+export const getUniqueObjectArray = (array) => {
     return array.filter((item, i) => {
         return (
             array.findIndex((item2, j) => {

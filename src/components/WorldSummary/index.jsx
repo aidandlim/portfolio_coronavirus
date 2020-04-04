@@ -11,39 +11,39 @@ const WorldSummary = ({ allData }) => {
         {
             id: 'recovered',
             label: 'recovered',
-            value: allData.cases.recovered
+            value: allData.cases.recovered,
         },
         {
             id: 'cases',
             label: 'cases',
-            value: allData.cases.total - allData.cases.recovered
-        }
+            value: allData.cases.total - allData.cases.recovered,
+        },
     ];
 
     const criticalData = [
         {
             id: 'critical',
             label: 'critical',
-            value: allData.cases.critical
+            value: allData.cases.critical,
         },
         {
             id: 'cases',
             label: 'cases',
-            value: allData.cases.total - allData.cases.critical
-        }
+            value: allData.cases.total - allData.cases.critical,
+        },
     ];
 
     const deathData = [
         {
             id: 'deaths',
             label: 'deaths',
-            value: allData.deaths.total
+            value: allData.deaths.total,
         },
         {
             id: 'cases',
             label: 'cases',
-            value: allData.cases.total - allData.deaths.total
-        }
+            value: allData.cases.total - allData.deaths.total,
+        },
     ];
 
     return (

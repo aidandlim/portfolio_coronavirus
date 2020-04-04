@@ -16,7 +16,7 @@ const Country = ({ match }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        getCountryHistories(country, res => {
+        getCountryHistories(country, (res) => {
             setData(res);
         });
     }, [country]);

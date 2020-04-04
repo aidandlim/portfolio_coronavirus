@@ -16,39 +16,39 @@ const CountrySummary = ({ data }) => {
         {
             id: 'recovered',
             label: 'recovered',
-            value: today.cases.recovered
+            value: today.cases.recovered,
         },
         {
             id: 'cases',
             label: 'cases',
-            value: today.cases.total - today.cases.recovered
-        }
+            value: today.cases.total - today.cases.recovered,
+        },
     ];
 
     const criticalData = [
         {
             id: 'critical',
             label: 'critical',
-            value: today.cases.critical
+            value: today.cases.critical,
         },
         {
             id: 'cases',
             label: 'cases',
-            value: today.cases.total - today.cases.critical
-        }
+            value: today.cases.total - today.cases.critical,
+        },
     ];
 
     const deathData = [
         {
             id: 'deaths',
             label: 'deaths',
-            value: today.deaths.total
+            value: today.deaths.total,
         },
         {
             id: 'cases',
             label: 'cases',
-            value: today.cases.total - today.deaths.total
-        }
+            value: today.cases.total - today.deaths.total,
+        },
     ];
 
     let dateData = [];
@@ -63,7 +63,7 @@ const CountrySummary = ({ data }) => {
 
         dateData.push({
             id: id,
-            data: []
+            data: [],
         });
 
         for (let j = data.length - 1; j >= 0; j--) {
@@ -76,7 +76,7 @@ const CountrySummary = ({ data }) => {
 
             dateData[i].data.push({
                 x: data[j].day,
-                y: thisData
+                y: thisData,
             });
         }
     }
@@ -137,7 +137,7 @@ const CountrySummary = ({ data }) => {
                             orient: 'bottom',
                             tickRotation: 90,
                             tickPadding: 10,
-                            legendPosition: 'middle'
+                            legendPosition: 'middle',
                         }}
                     />
                 </div>

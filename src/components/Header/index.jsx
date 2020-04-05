@@ -14,7 +14,7 @@ const Header = ({ setIsOpenNav }) => {
     return (
         <header className='header'>
             <FeatherIcon className='header-menu' icon='menu' onClick={_handleMenu} />
-            <Link to='/'>
+            <Link to='/world'>
                 <div className='header-title'>OVERVIEW OF COVID-19</div>
             </Link>
         </header>

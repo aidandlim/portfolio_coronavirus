@@ -25,7 +25,7 @@ const Country = ({ match }) => {
         <div className='country'>
             <div className='country-container'>
                 <div className='country-back-container'>
-                    <Link to='/'>
+                    <Link to='/world'>
                         <div className='country-back'>{`< BACK TO WORLD DATA`}</div>
                     </Link>
                 </div>

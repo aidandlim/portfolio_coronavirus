@@ -55,7 +55,7 @@ const Nav = ({ isOpenNav, setIsOpenNav }) => {
             <div className='nav-close' onClick={_handleClose}>
                 CLOSE
             </div>
-            <Link to='/' onClick={_handleClose}>
+            <Link to='/world' onClick={_handleClose}>
                 <div className='nav-menu'>
                     <div className='nav-menu-title'>
                         <FeatherIcon className='nav-menu-icon' icon='chevron-right' />

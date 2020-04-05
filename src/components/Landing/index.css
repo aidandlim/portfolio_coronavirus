@@ -1,0 +1,51 @@
+.landing {
+    width: 100%;
+    height: calc(100% - 2.5rem);
+
+    overflow: hidden;
+
+    position: relative;
+
+    background-color: #303030;
+}
+
+.landing-container {
+    width: 90%;
+    max-width: 40rem;
+    height: auto;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.landing-loading {
+    width: auto;
+    height: auto;
+
+    color: #aaaaaa;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.landing-button {
+    width: auto;
+    height: auto;
+
+    padding: 0.75rem 3rem;
+
+    position: relative;
+    float: left;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    color: #AAAAAA;
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-decoration: underline;
+
+    cursor: pointer;
+    outline: none;
+}

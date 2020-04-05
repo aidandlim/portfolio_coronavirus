@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
+import Landing from '../Landing';
 import Header from '../Header';
 import Nav from '../Nav';
 import World from '../World';
@@ -13,10 +14,11 @@ const Router = () => {
 
     return (
         <BrowserRouter>
-            <Header setIsOpenNav={setIsOpenNav}/>
+            <Header setIsOpenNav={setIsOpenNav} />
             <Nav isOpenNav={isOpenNav} setIsOpenNav={setIsOpenNav} />
             <Switch>
-                <Route path='/' exact component={World} />
+                <Route path='/' exact component={Landing} />
+                <Route path='/world' exact component={World} />
                 <Route path='/country/:country' exact component={Country} />
                 <Route path='/error' component={Error} />
                 <Redirect from='/' to='/error' />

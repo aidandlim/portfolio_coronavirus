@@ -31,26 +31,25 @@ const Country = ({ match }) => {
                 </div>
                 <span className='country-title'>Current status of COVID-19 in {country === 'All' ? 'the world' : country}</span>
                 <div className='country-greeting'>
-                    Random sentences can also spur creativity in other types of projects being done. If you are trying to come up with a new concept, a new idea or a new product, a random sentence may
-                    help you find unique qualities you may not have considered. Trying to incorporate the sentence into your project can help you look at it in different and unexpected ways than you
-                    would normally on your own.
+                    This website is designed to help you understand the status of the COVID-19. All data is collected in real-time from public APIs. You can see the status of the virus spread very
+                    easily on the current page or pages by countries. This page consists of two parts largely: a summary area and a list area. I hope this information can help you understand this
+                    virus. Also, stay healthy.
                 </div>
                 <div className='country-subtitle'>
                     <font className='country-symbol'>✓</font> Summary
                 </div>
                 <div className='country-description'>
-                    If you're visiting this page, you're likely here because you're searching for a random sentence. Sometimes a random word just isn't enough, and that is where the random sentence
-                    generator comes into play. By inputting the desired number, you can make a list of as many random sentences as you want or need. Producing random sentences can be helpful in a
-                    number of different ways.
+                    In this summary part, you can check various data about the virus spread easily with a graph. In the first box, you can find out the total cases data also the number of newly
+                    discovered confirmed people. In the next three graphs, they show each the number of recovered, critical and death cases. Finally, only on the country page, the line graph indicates
+                    the change in the number of cases.
                 </div>
                 {data.length !== 0 ? <Summary type='country' data={data} /> : <div className={isMobile ? 'country-loading-mobile' : 'country-loading'}>Loading...</div>}
                 <div className='country-subtitle'>
                     <font className='country-symbol'>✓</font> List by Date
                 </div>
                 <div className='country-description'>
-                    For those writers who have writers' block, this can be an excellent way to take a step to crumbling those walls. By taking the writer away from the subject matter that is causing
-                    the block, a random sentence may allow them to see the project they're working on in a different light and perspective. Sometimes all it takes is to get that first sentence down to
-                    help break the block.
+                    In this list part, this table shows data by country or date. Each row has death cases and total cases that include active, critical, and recovered people data. In addition, you can
+                    also check the percentage of that. Only on the world page, you can get details about the specific country by hitting the link on the country name.
                 </div>
                 <List type='country' data={data} />
             </div>

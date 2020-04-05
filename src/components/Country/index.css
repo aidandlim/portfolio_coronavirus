@@ -33,14 +33,19 @@
     height: auto;
 
     margin-top: 2rem;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.5rem;
 
     position: relative;
-    float: left;
+    float: right;
 
-    color: #606060;
-    font-size: 0.75rem;
+    color: #353535;
+    font-size: 0.6rem;
     font-weight: 700;
+
+    background-color: #202020;
+    border-radius: 0.5rem;
+
+    cursor: pointer;
 }
 
 .country-title {

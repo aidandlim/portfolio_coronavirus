@@ -26,7 +26,7 @@ const Country = ({ match }) => {
             <div className='country-container'>
                 <div className='country-back-container'>
                     <Link to='/world'>
-                        <div className='country-back'>{`< BACK TO WORLD DATA`}</div>
+                        <div className='country-back'>CLOSE</div>
                     </Link>
                 </div>
                 <span className='country-title'>Current status of COVID-19 in {country === 'All' ? 'the world' : country}</span>

@@ -1,4 +1,4 @@
 import { getWorldData } from './world';
-import { getCountryHistories } from './countries';
+import { getCountries, getCountryHistories } from './countries';
 
-export { getWorldData, getCountryHistories };
+export { getWorldData, getCountries, getCountryHistories };

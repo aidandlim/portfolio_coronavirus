@@ -4,27 +4,19 @@ import { Link } from 'react-router-dom';
 
 import FeatherIcon from 'feather-icons-react';
 
-import CI from '../../assets/favicon.png';
 import './index.css';
 
-const Header = () => {
-    const _handleLinkedIn = () => {
-        window.open('https://www.linkedin.com/in/aidan-lim/', '_blank');
-    };
-
-    const _handleGitHub = () => {
-        window.open('https://github.com/aidandlim/', '_blank');
+const Header = ({ setIsOpenNav }) => {
+    const _handleMenu = () => {
+        setIsOpenNav((isOpenNav) => !isOpenNav);
     };
 
     return (
         <header className='header'>
+            <FeatherIcon className='header-menu' icon='menu' onClick={_handleMenu} />
             <Link to='/'>
-                <div className='header-ci' style={{ backgroundImage: `url('${CI}')` }}></div>
-                <div className='header-title'>Overview of COVID-19</div>
+                <div className='header-title'>OVERVIEW OF COVID-19</div>
             </Link>
-            <FeatherIcon className='header-about-icon' icon='linkedin' onClick={_handleLinkedIn} />
-            <FeatherIcon className='header-about-icon' icon='github' onClick={_handleGitHub} />
-            <div className='header-about'>by Aidan</div>
         </header>
     );
 };

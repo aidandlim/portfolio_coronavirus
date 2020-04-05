@@ -11,6 +11,9 @@ export const getWorldData = (cb) => {
         },
     })
         .then((res) => {
+            const index = res.data.response.findIndex((element) => element.country === 'World');
+            if (index !== -1) res.data.response.splice(index, 1);
+
             if (res.status === 200) cb(res.data.response);
         })
         .catch(() => {

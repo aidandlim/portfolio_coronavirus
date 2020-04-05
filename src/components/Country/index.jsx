@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import CountrySummary from '../CountrySummary';
-import CountryList from '../CountryList';
+import Summary from '../Summary';
+import List from '../List';
 
 import { isMobile } from 'react-device-detect';
 
@@ -43,7 +43,7 @@ const Country = ({ match }) => {
                     generator comes into play. By inputting the desired number, you can make a list of as many random sentences as you want or need. Producing random sentences can be helpful in a
                     number of different ways.
                 </div>
-                {data.length !== 0 ? <CountrySummary data={data} /> : <div className={isMobile ? 'country-loading-mobile' : 'country-loading'}>Loading...</div>}
+                {data.length !== 0 ? <Summary type='country' data={data} /> : <div className={isMobile ? 'country-loading-mobile' : 'country-loading'}>Loading...</div>}
                 <div className='country-subtitle'>
                     <font className='country-symbol'>✓</font> List by Date
                 </div>
@@ -52,7 +52,7 @@ const Country = ({ match }) => {
                     the block, a random sentence may allow them to see the project they're working on in a different light and perspective. Sometimes all it takes is to get that first sentence down to
                     help break the block.
                 </div>
-                <CountryList data={data} />
+                <List type='country' data={data} />
             </div>
         </div>
     );

@@ -1,0 +1,25 @@
+.error {
+    width: 100%;
+    height: calc(100% - 2.5rem);
+
+    overflow: hidden;
+
+    position: relative;
+
+    background-color: #303030;
+}
+
+.error-message {
+    width: auto;
+    height: auto;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #808080;
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-align: right;
+}

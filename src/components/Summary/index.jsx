@@ -9,8 +9,8 @@ import { numberFormat, percentFormat } from '../../util';
 
 import './index.css';
 
-const CountrySummary = ({ data }) => {
-    const today = data[0];
+const Summary = ({ type, data }) => {
+    const today = type === 'country' ? data[0] : data[data.findIndex((element) => element.country === 'All')];
 
     const recoveredData = [
         {
@@ -53,93 +53,79 @@ const CountrySummary = ({ data }) => {
 
     let dateData = [];
 
-    for (let i = 0; i < 4; i++) {
-        let id = '';
+    if (type === 'country') {
+        for (let i = 0; i < 4; i++) {
+            let id = '';
 
-        if (i === 0) id = 'total';
-        if (i === 1) id = 'recovered';
-        if (i === 2) id = 'critical';
-        if (i === 3) id = 'deaths';
+            if (i === 0) id = 'total';
+            if (i === 1) id = 'recovered';
+            if (i === 2) id = 'critical';
+            if (i === 3) id = 'deaths';
 
-        dateData.push({
-            id: id,
-            data: [],
-        });
-
-        for (let j = data.length - 1; j >= 0; j--) {
-            let thisData;
-
-            if (i === 0) thisData = data[j].cases.total;
-            if (i === 1) thisData = data[j].cases.recovered;
-            if (i === 2) thisData = data[j].cases.critical;
-            if (i === 3) thisData = data[j].deaths.total;
-
-            dateData[i].data.push({
-                x: data[j].day,
-                y: thisData,
+            dateData.push({
+                id: id,
+                data: [],
             });
+
+            for (let j = data.length - 1; j >= 0; j--) {
+                let thisData;
+
+                if (i === 0) thisData = data[j].cases.total;
+                if (i === 1) thisData = data[j].cases.recovered;
+                if (i === 2) thisData = data[j].cases.critical;
+                if (i === 3) thisData = data[j].deaths.total;
+
+                dateData[i].data.push({
+                    x: data[j].day,
+                    y: thisData,
+                });
+            }
         }
     }
 
     return (
-        <div className='countrySummary'>
-            <div className='countrySummary-cases-container'>
-                <div className='countrySummary-cases'>
-                    <div className='countrySummary-cases-title'>TOTAL CASES</div>
-                    <div className='countrySummary-cases-value'>
+        <div className='summary'>
+            <div className='summary-cases-container'>
+                <div className='summary-cases'>
+                    <div className='summary-cases-title'>TOTAL CASES</div>
+                    <div className='summary-cases-value'>
                         {numberFormat(today.cases.total)}&nbsp;&nbsp;( ▲ {numberFormat(today.cases.new)} )
                     </div>
                 </div>
             </div>
-            <div className='countrySummary-container'>
+            <div className='summary-container'>
                 <PieChart data={recoveredData} color='#1abc9c' />
-                <div className='countrySummary-value'>
+                <div className='summary-value'>
                     <p>{numberFormat(today.cases.recovered)}</p>
                     <p>{percentFormat(today.cases.recovered, today.cases.total)}</p>
                 </div>
             </div>
-            <div className='countrySummary-container'>
+            <div className='summary-container'>
                 <PieChart data={criticalData} color='#F57C00' />
-                <div className='countrySummary-value'>
+                <div className='summary-value'>
                     <p>{numberFormat(today.cases.critical)}</p>
                     <p>{percentFormat(today.cases.critical, today.cases.total)}</p>
                 </div>
             </div>
-            <div className='countrySummary-container'>
+            <div className='summary-container'>
                 <PieChart data={deathData} color='#e74c3c' />
-                <div className='countrySummary-value'>
+                <div className='summary-value'>
                     <p>{numberFormat(today.deaths.total)}</p>
                     <p>{percentFormat(today.deaths.total, today.cases.total)}</p>
                 </div>
             </div>
-            <div className='countrySummary-title-container'>
+            <div className='summary-title-container'>
                 <div>RECOVERED</div>
             </div>
-            <div className='countrySummary-title-container'>
+            <div className='summary-title-container'>
                 <div>CRITICAL</div>
             </div>
-            <div className='countrySummary-title-container'>
+            <div className='summary-title-container'>
                 <div>DEATH</div>
             </div>
-            {!isMobile ? (
-                <div className='countrySummary-container-wide'>
-                    <ResponsiveLine
-                        data={dateData}
-                        margin={{ top: 30, right: 30, bottom: 100, left: 70 }}
-                        xScale={{ type: 'point' }}
-                        yScale={{ type: 'linear', min: 'auto', max: 'auto', stacked: false, reverse: false }}
-                        colors={['#3498db', '#1abc9c', '#F57C00', '#e74c3c']}
-                        lineWidth={3}
-                        pointSize={7}
-                        pointColor={{ from: 'color', modifiers: [] }}
-                        enableArea={true}
-                        axisBottom={{
-                            orient: 'bottom',
-                            tickRotation: 90,
-                            tickPadding: 10,
-                            legendPosition: 'middle',
-                        }}
-                    />
+            {type === 'country' && !isMobile ? (
+                <div className='summary-container-wide'>
+                    <LineChart data={dateData} />
                 </div>
             ) : null}
         </div>
@@ -160,4 +146,26 @@ const PieChart = ({ data, color }) => {
     );
 };
 
-export default CountrySummary;
+const LineChart = ({ data }) => {
+    return (
+        <ResponsiveLine
+            data={data}
+            margin={{ top: 30, right: 30, bottom: 100, left: 70 }}
+            xScale={{ type: 'point' }}
+            yScale={{ type: 'linear', min: 'auto', max: 'auto', stacked: false, reverse: false }}
+            colors={['#3498db', '#1abc9c', '#F57C00', '#e74c3c']}
+            lineWidth={3}
+            pointSize={7}
+            pointColor={{ from: 'color', modifiers: [] }}
+            enableArea={true}
+            axisBottom={{
+                orient: 'bottom',
+                tickRotation: 90,
+                tickPadding: 10,
+                legendPosition: 'middle',
+            }}
+        />
+    );
+};
+
+export default Summary;

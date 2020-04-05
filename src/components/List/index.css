@@ -1,4 +1,4 @@
-.worldList {
+.list {
     width: calc(100% - 3rem);
     height: auto;
 
@@ -10,14 +10,14 @@
     border-collapse: collapse;
 }
 
-.worldList > thead > tr,
-.worldList > tbody > tr {
+.list > thead > tr,
+.list > tbody > tr {
     height: 1.75rem;
 
     opacity: 0.7;
 }
 
-.worldList > thead > tr > td {
+.list > thead > tr > td {
     padding: 0.2rem;
 
     color: #808080;
@@ -26,7 +26,7 @@
     text-align: right;
 }
 
-.worldList > thead > tr > th {
+.list > thead > tr > th {
     padding: 0.2rem;
 
     color: #808080;
@@ -38,7 +38,7 @@
     border: solid 1px #454545;
 }
 
-.worldList > tbody > tr > td {
+.list > tbody > tr > td {
     padding: 0.2rem;
 
     color: #aaaaaa;
@@ -50,46 +50,46 @@
     border: solid 1px #454545;
 }
 
-.worldList-link {
+.list-link {
     color: #aaaaaa;
     font-size: 0.65rem;
     font-weight: 700;
 }
 
-.worldList-cases {
+.list-cases {
     color: #3498db;
     font-weight: 700;
 }
 
-.worldList-active {
+.list-active {
     font-weight: 700;
 }
 
-.worldList-new {
+.list-new {
     color: #fbc02d;
     font-weight: 700;
 }
 
-.worldList-critical {
+.list-critical {
     color: #f57c00;
     font-weight: 700;
 }
 
-.worldList-recovered {
+.list-recovered {
     color: #1abc9c;
     font-weight: 700;
 }
 
-.worldList-deaths {
+.list-deaths {
     color: #e74c3c;
     font-weight: 700;
 }
 
-.worldList-percent {
+.list-percent {
     font-size: 0.5rem;
     font-weight: 300;
 }
 
-.worldList-loading {
+.list-loading {
     height: 5rem;
 }

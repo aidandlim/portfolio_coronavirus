@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { getWorldData } from '../../data';
+import { getWorldData, getContinentData } from '../../data';
 
 import Summary from '../Summary';
 import List from '../List';
@@ -9,8 +9,12 @@ import './index.css';
 
 const World = () => {
     const [data, setData] = useState([]);
+    const [continentsData, setContinentsData] = useState([]);
 
     useEffect(() => {
+        getContinentData((res) => {
+            setContinentsData(res);
+        });
         getWorldData((res) => {
             setData(res);
         });
@@ -34,6 +38,14 @@ const World = () => {
                     the change in the number of cases.
                 </div>
                 {data.length !== 0 ? <Summary type='world' data={data} /> : <div className='world-loading'>Loading...</div>}
+                <div className='world-subtitle'>
+                    <font className='world-symbol'>✓</font> List by Continents
+                </div>
+                <div className='world-description'>
+                    As APIs are updated, it provides data of list by continents in this table. Each row has death cases and total cases that include active, critical, and recovered people data. In
+                    addition, you can also check the percentage of that.
+                </div>
+                <List type='world' data={continentsData} />
                 <div className='world-subtitle'>
                     <font className='world-symbol'>✓</font> List by Countries
                 </div>

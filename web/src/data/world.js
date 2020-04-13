@@ -14,7 +14,7 @@ export const getWorldData = (cb) => {
             const arr = res.data.response;
             const deleteArr = ['World', 'Europe', 'North-America', 'South-America', 'Asia', 'Africa', 'Oceania'];
 
-            for(const i in deleteArr) {
+            for (const i in deleteArr) {
                 const index = arr.findIndex((element) => element.country === deleteArr[i]);
                 if (index !== -1) arr.splice(index, 1);
             }
@@ -41,7 +41,7 @@ export const getContinentData = (cb) => {
             const result = [];
             const includeArr = ['All', 'Europe', 'North-America', 'South-America', 'Asia', 'Africa', 'Oceania'];
 
-            for(const i in includeArr) {
+            for (const i in includeArr) {
                 const index = arr.findIndex((element) => element.country === includeArr[i]);
                 if (index !== -1) result.push(arr[index]);
             }
